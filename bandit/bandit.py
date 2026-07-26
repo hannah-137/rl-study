@@ -68,8 +68,10 @@ def run(epsilon, steps=STEPS):
         # If we got more than we expected, the estimate goes up.
         # If we got less, it goes down.
         # Q-learning uses this same idea.
+        # new = (old × (n-1) + r) / n   
         counts[arm] += 1
         values[arm] += (reward - values[arm]) / counts[arm]
+ 
 
         total_reward += reward
 
